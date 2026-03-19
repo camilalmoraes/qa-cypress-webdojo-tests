@@ -1,0 +1,14 @@
+{
+  "valido": {
+    "email": "papito@webdojo.com",
+    "senha": "katana123"
+  },
+  "invalido": {
+    "email": "papito@webdojo.com",
+    "senha": "senhaerrada"
+  },
+  "emailInvalido": {
+    "email": "email-invalido",
+    "senha": "katana123"
+  }
+}
