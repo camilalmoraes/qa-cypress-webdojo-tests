@@ -64,14 +64,14 @@ FUNCIONALIDADE - FORMULÁRIO:
 
 CT-FORM-001
 
-Título: Envio do formulário com todos os campos validos e preenchidos
+Título: Envio com campos obrigatórios válidos
 Severidade: Crítica
 Tipo de Teste: Funcional
 Behavior: Positivo
 
 Pré-condição: Usuário na tela de formulário
 
-Given: usuário acessa o formulário
+Given: usuário autenticado acessa a tela de formulário de consultoria
 When: preenche todos os campos corretamente
 And: aceita os termos de uso
 And: clica em "Enviar formulário"
@@ -86,7 +86,7 @@ Behavior: Positivo
 
 Pré-condição: Usuário na tela de formulário
 
-Given: usuário acessa o formulário
+Given: usuário autenticado acessa a tela de formulário de consultoria
 When: preenche todos os campos obrigatórios corretamente
 And: aceita os termos de uso
 And: clica em "Enviar formulário"
@@ -99,7 +99,7 @@ Severidade: Alta
 Tipo de Teste: Validação
 Behavior: Negativo
 
-Given: usuário acessa o formulário
+Given: usuário autenticado acessa a tela de formulário de consultoria
 When: tenta enviar sem preencher Nome e Email
 Then: deve exibir mensagens de obrigatoriedade
 
@@ -110,107 +110,20 @@ Severidade: Alta
 Tipo de Teste: Validação
 Behavior: Negativo
 
-Given: usuário acessa o formulário
+Given: usuário autenticado acessa a tela de formulário de consultoria
 When: insere email inválido
 And: tenta enviar o formulário
-Then: deve exibir mensagem de email inválido
+Then: deve exibir mensagem "Digite nome e sobrenome"
+And: deve exibir mensagem "Informe um email válido"
 
 CT-FORM-005
 
-Título: Telefone em formato inválido
-Severidade: Média
-Tipo de Teste: Validação
-Behavior: Negativo
-
-Given: usuário acessa o formulário
-When: insere telefone fora do padrão
-Then: deve impedir envio ou exibir erro
-
-CT-FORM-006
-
-Título: Seleção de tipo de pessoa física
-Severidade: Média
-Tipo de Teste: Funcional
-Behavior: Positivo
-
-Given: usuário acessa o formulário
-When: seleciona "Pessoa Física"
-Then: campo CPF deve estar disponível
-
-CT-FORM-007
-
-Título: Seleção de tipo de pessoa jurídica
-Severidade: Média
-Tipo de Teste: Funcional
-Behavior: Positivo
-
-Given: usuário acessa o formulário
-When: seleciona "Pessoa Física"
-Then: campo CPF deve estar disponível
-
-CT-FORM-008
-
-Título: Upload de arquivo válido
-Severidade: Média
-Tipo de Teste: Funcional
-Behavior: Positivo
-
-Given: usuário acessa o formulário
-When: anexa arquivo válido (PNG/JPG/PDF até 5MB)
-Then: o arquivo deve ser aceito
-
-CT-FORM-009
-
-Título: Upload de arquivo acima do limite
-Severidade: Alta
-Tipo de Teste: Validação
-Behavior: Negativo
-
-Given: usuário acessa o formulário
-When: anexa arquivo maior que 5MB
-Then: deve exibir erro
-
-CT-FORM-010
-
-Título: Seleção múltipla em "Como nos conheceu"
-Severidade: Baixa
-Tipo de Teste: Funcional
-Behavior: Positivo
-
-Given: usuário acessa o formulário
-When: seleciona múltiplas opções
-Then: todas devem ser registradas
-
-CT-FORM-011
-
-Título: Campo "Mais detalhes" opcional
-Severidade: Baixa
-Tipo de Teste: Negócio
-Behavior: Positivo
-
-Given: usuário acessa o formulário
-When: deixa o campo em branco
-Then: o formulário deve ser enviado normalmente
-
-CT-FORM-012
-
-Título: Não aceitar termos de uso
+Título: Envio sem aceitar termos de uso
 Severidade: Crítica
 Tipo de Teste: Regra de Negócio
 Behavior: Negativo
 
-Given: usuário preenche o formulário corretamente
-When: não aceita os termos
-And: tenta enviar
+Given: usuário preenche os campos obrigatórios corretamente
+When: não aceita os termos de uso
+And: tenta enviar o formulário
 Then: o envio deve ser bloqueado
-
-CT-FORM-013
-
-Título: Campo tecnologias com múltiplas entradas
-Severidade: Média
-Tipo de Teste: Funcional
-Behavior: Positivo
-
-Given: usuário acessa o formulário
-When: adiciona múltiplas tecnologias
-Then: todas devem ser registradas corretamente

@@ -4,7 +4,7 @@ describe('Login', () => {
     cy.visit('/')
   })
 
-  it('CT-LOGIN-001', () => {
+  it('CT-LOGIN-001 - Login com sucesso', () => {
 
     cy.fixture('login').then((data) => {
 
@@ -18,7 +18,7 @@ describe('Login', () => {
     })
   })
 
-  it('CT-LOGIN-002', () => {
+  it('CT-LOGIN-002 - Login com senha inválida', () => {
 
     cy.fixture('login').then((data) => {
 
@@ -32,7 +32,7 @@ describe('Login', () => {
 
   })
 
-  it('CT-LOGIN-003', () => {
+  it('CT-LOGIN-003 - Login com campos vazios', () => {
 
     cy.contains('button', 'Entrar').click()
 
@@ -40,7 +40,7 @@ describe('Login', () => {
       .should('be.visible')
   })
 
-  it('CT-LOGIN-004', () => {
+  it('CT-LOGIN-004 - Email com formato inválido', () => {
 
     cy.fixture('login').then((data) => {
 
