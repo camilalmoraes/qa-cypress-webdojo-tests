@@ -76,12 +76,12 @@ class formPage {
             .should('be.visible')
     }
 
-    validarCampoNome(){
+    validarCampoNome() {
         cy.contains('Digite nome e sobrenome')
             .should('be.visible')
     }
 
-    validarCampoEmail(){
+    validarCampoEmail() {
         cy.contains('Informe um email válido')
             .should('be.visible')
     }

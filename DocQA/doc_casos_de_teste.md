@@ -58,7 +58,7 @@ And: insere senha válida
 And: clica em "Entrar"
 Then: deve exibir mensagem de email inválido
 
-________________________________________________________
+________________________________________________________________________
 
 FUNCIONALIDADE - FORMULÁRIO:
 
@@ -127,3 +127,20 @@ Given: usuário preenche os campos obrigatórios corretamente
 When: não aceita os termos de uso
 And: tenta enviar o formulário
 Then: o envio deve ser bloqueado
+
+________________________________________________________________________
+
+FUNCIONALIDADE: VIDEO
+
+CT-VIDEO-001
+Título: Reprodução do vídeo ao clicar no player
+Severidade: Alta
+Tipo de Teste: Funcional
+Pré-condições: Usuário autenticado e na tela "Vídeo"
+Behavior: Positivo
+
+Given: o usuário está na tela de vídeo
+When: visualiza o player de vídeo
+And: clica no botão de play
+Then: o vídeo deve iniciar a reprodução
+And: o tempo do vídeo deve começar a avançar

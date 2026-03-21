@@ -36,7 +36,7 @@ class loginPage {
             .should('be.visible')
     }
 
-    login(email,senha){
+    login(email, senha) {
         this.preencherEmail(email)
         this.preencherSenha(senha)
         this.clicarEntrar()

@@ -20,7 +20,7 @@ describe('Login', () => {
 
     cy.fixture('login').then((data) => {
 
-      loginPage.login(data.valido.email, data.valido.senha)
+      loginPage.login(data.invalido.email, data.invalido.senha)
 
       loginPage.validarErroLogin()
     })
