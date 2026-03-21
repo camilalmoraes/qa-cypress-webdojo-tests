@@ -1,12 +1,16 @@
 
+import formPage from '../pages/FormPage'
+import loginPage from '../pages/loginPage'
+
 describe('forms', () => {
 
     beforeEach(() => {
-        cy.visit('/')
-        cy.fixture('login').then((data) => {
+        loginPage.acessarLogin()
 
-            const user = data.valido
-            cy.login(user.email, user.senha)
+        cy.fixture('login').then((data) => {
+            loginPage.preencherEmail(data.valido.email)
+            loginPage.preencherSenha(data.valido.senha)
+            loginPage.clicarEntrar()
         })
     })
 
@@ -14,58 +18,39 @@ describe('forms', () => {
 
         cy.acessaPagina('Formulário', 'Consultoria')
 
-        cy.preencherCamposObrigatorios()
+        formPage.preencherNome('Camila Louzada Moraes')
+        formPage.preencherEmail('camila@gmail.com')
+        formPage.preencherTelefone('83988888888')
 
-        cy.get('#phone').type('83988888888')
-            .should('have.value', '(83) 98888-8888') //Para confirmar que o valor é o mesmo com a mascara
+        formPage.selecionarTipoConsultoria('Individual')
+        formPage.selecionarPessoaFisica()
+        formPage.preencherCPF('86083034507')
 
-        cy.get('#consultancyType').select('Individual')
+        formPage.selecionarCanais()
+        formPage.uploadArquivo()
 
-        //Double check
-        cy.contains('span', 'Pessoa Física')
-            .should('be.visible')
-            .click()
-        cy.contains('span', 'Pessoa Jurídica')
-            .should('be.not.checked')
+        formPage.preencherDetalhes('Blablabla')
 
-        cy.get('#document').type('86083034507')
-            .should('have.value', '860.830.345-07')
+        formPage.adicionarTecnologia('Cypress')
+        formPage.validarTecnologia('Cypress')
 
-        cy.selecionarCanais()
+        formPage.aceitarTermos()
+        formPage.enviarFormulario()
 
-        cy.get('input[type="file"]')
-            .selectFile('./cypress/fixtures/anexo.png', { force: true })
-
-        cy.get('#details').type('Blablablablablabla')
-
-        cy.get('#technologies').type('Cypress')
-            .type('{enter}')
-
-        cy.contains('label', 'Tecnologias')
-            .parent()
-            .contains('span', 'Cypress')
-            .should('be.visible')
-
-        cy.aceitarTermos()
-
-        cy.enviarFormulario()
-
-        cy.contains('Sua solicitação de consultoria foi enviada com sucesso! Em breve, nossa equipe entrará em contato através do email fornecido.')
-            .should('be.visible')
+        formPage.validarSucesso()
     })
 
     it('CT-FORM-02 - Envio do formulário com apenas dados obrigatórios válidos', () => {
 
         cy.acessaPagina('Formulário', 'Consultoria')
 
-        cy.preencherCamposObrigatorios()
+        formPage.preencherNome('Camila Louzada Moraes')
+        formPage.preencherEmail('camila@gmail.com')
 
-        cy.aceitarTermos()
+        formPage.aceitarTermos()
+        formPage.enviarFormulario()
 
-        cy.enviarFormulario()
-
-        cy.contains('Sua solicitação de consultoria foi enviada com sucesso! Em breve, nossa equipe entrará em contato através do email fornecido.')
-            .should('be.visible')
+        formPage.validarSucesso()
 
     })
 
@@ -73,55 +58,35 @@ describe('forms', () => {
 
         cy.acessaPagina('Formulário', 'Consultoria')
 
-        cy.get('#phone').type('83988888888')
-            .should('have.value', '(83) 98888-8888')
+        formPage.preencherTelefone('83988888888')
 
-        cy.get('#consultancyType').select('Individual')
+        formPage.selecionarTipoConsultoria('Individual')
+        formPage.selecionarPessoaFisica()
+        formPage.preencherCPF('86083034507')
 
-        //Double check
-        cy.contains('span', 'Pessoa Física')
-            .should('be.visible')
-            .click()
-        cy.contains('span', 'Pessoa Jurídica')
-            .should('be.not.checked')
+        formPage.selecionarCanais()
+        formPage.uploadArquivo()
 
-        cy.get('#document').type('86083034507')
-            .should('have.value', '860.830.345-07')
+        formPage.preencherDetalhes('Blablabla')
 
-        cy.selecionarCanais()
+        formPage.adicionarTecnologia('Cypress')
+        formPage.validarTecnologia('Cypress')
 
-        cy.get('input[type="file"]')
-            .selectFile('./cypress/fixtures/anexo.png', { force: true })
+        formPage.aceitarTermos()
+        formPage.enviarFormulario()
 
-        cy.get('#details').type('Blablablablablabla')
-
-        cy.get('#technologies').type('Cypress')
-            .type('{enter}')
-
-        cy.contains('label', 'Tecnologias')
-            .parent()
-            .contains('span', 'Cypress')
-            .should('be.visible')
-
-        cy.aceitarTermos()
-
-        cy.enviarFormulario()
-
-        cy.contains('Digite nome e sobrenome')
-            .should('be.visible')
-
-        cy.contains('Informe um email válido')
-            .should('be.visible')
+        formPage.validarCampoEmail()
+        formPage.validarCampoNome()
     })
 
     it('CT-FORM-004 - Email em formato inválido', () => {
         cy.acessaPagina('Formulário', 'Consultoria')
 
-        cy.preencherCamposObrigatorios()
+        formPage.preencherNome('Camila Louzada Moraes')
+        formPage.preencherEmail('camila')
 
-        cy.aceitarTermos()
-
-        cy.enviarFormulario()
+        formPage.aceitarTermos()
+        formPage.enviarFormulario()
 
         cy.get('#email').then(($input) => {
             const message = $input[0].validationMessage
@@ -134,9 +99,10 @@ describe('forms', () => {
 
         cy.acessaPagina('Formulário', 'Consultoria')
 
-        cy.preencherCamposObrigatorios()
+        formPage.preencherNome('Camila Louzada Moraes')
+        formPage.preencherEmail('camila@gmail.com')
 
-        cy.enviarFormulario()
+        formPage.enviarFormulario()
 
         cy.contains('Você precisa aceitar os termos de uso')
             .should('be.visible')
