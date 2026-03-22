@@ -148,7 +148,7 @@ Localização:
 cypress/reports/report.html
 ```
 
-![Relatório Mochawesome](https://raw.githubusercontent.com/camilalmoraes/qa-cypress-webdojo-tests/master/docs/imagem/report.png)
+![Relatório Mochawesome](https://github.com/camilalmoraes/qa-cypress-webdojo-tests/blob/master/cypress/docs/imagem/report.png)
 
 ---
 
@@ -159,7 +159,8 @@ Durante a execução dos testes são geradas automaticamente:
 * Screenshots em caso de falha
 * Logs detalhados da execução
   
-![Execução dos testes](docs/gif/test-run.gif)
+![Execução dos testes](https://github.com/camilalmoraes/qa-cypress-webdojo-tests/blob/master/cypress/docs/gif/test-run.gif)
+
 ---
 
 ### Tecnologias Utilizadas
