@@ -147,7 +147,8 @@ Localização:
 ```bash
 cypress/reports/report.html
 ```
-![Relatório Mochawesome](docs/imagem/report.png)
+
+![Relatório Mochawesome](https://raw.githubusercontent.com/camilalmoraes/qa-cypress-webdojo-tests/master/docs/imagem/report.png)
 
 ---
 
@@ -157,6 +158,7 @@ Durante a execução dos testes são geradas automaticamente:
 
 * Screenshots em caso de falha
 * Logs detalhados da execução
+  
 ![Execução dos testes](docs/gif/test-run.gif)
 ---
 
