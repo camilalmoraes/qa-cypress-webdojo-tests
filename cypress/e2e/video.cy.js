@@ -1,24 +1,18 @@
-import videoPage from '../pages/videoPage'
-import loginPage from '../pages/loginPage'
+import videoPage from '../pages/VideoPage'
 
 //Testando interação com iFrames
 describe('Reproduzir video', () => {
 
     it('CT-VIDEO-001 - Reprodução do vídeo ao clicar no player', () => {
 
-        loginPage.acessarLogin()
-
         cy.fixture('login').then((data) => {
+            cy.login(data.valido.email, data.valido.senha)
 
-            loginPage.login(data.valido.email, data.valido.senha)
+            cy.acessaPagina('Video', 'Video')
 
-            loginPage.validarLoginSucesso()
+            videoPage.getIframe()
+            videoPage.clicarPlay()
+            videoPage.pausePlay()
         })
-
-        cy.acessaPagina('Video', 'Video')
-
-        videoPage.getIframe()
-        videoPage.clicarPlay()
-        videoPage.pausePlay()
     })
 })

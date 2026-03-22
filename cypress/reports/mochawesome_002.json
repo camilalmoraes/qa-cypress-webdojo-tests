@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-03-22T01:22:11.199Z",
+    "end": "2026-03-22T01:22:15.577Z",
+    "duration": 4378,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fee0fd8c-2246-498a-9d74-1a4766b54630",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e9a3a268-179f-43f0-8e70-985108c4c954",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CT-LOGIN-001 - Login com sucesso",
+              "fullTitle": "Login CT-LOGIN-001 - Login com sucesso",
+              "timedOut": null,
+              "duration": 1149,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('login').then(data => {\n  _loginPage.default.login(data.valido.email, data.valido.senha);\n  _loginPage.default.validarLoginSucesso();\n});",
+              "err": {},
+              "uuid": "2da5e49f-3c40-4738-9c66-18972fb8d0a9",
+              "parentUUID": "e9a3a268-179f-43f0-8e70-985108c4c954",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT-LOGIN-002 - Login com senha inválida",
+              "fullTitle": "Login CT-LOGIN-002 - Login com senha inválida",
+              "timedOut": null,
+              "duration": 1568,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('login').then(data => {\n  _loginPage.default.login(data.invalido.email, data.invalido.senha);\n  _loginPage.default.validarErroLogin();\n});",
+              "err": {},
+              "uuid": "27f8d0ec-4c99-4f26-9e87-a34d64e3f1c0",
+              "parentUUID": "e9a3a268-179f-43f0-8e70-985108c4c954",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT-LOGIN-003 - Login com campos vazios",
+              "fullTitle": "Login CT-LOGIN-003 - Login com campos vazios",
+              "timedOut": null,
+              "duration": 311,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginPage.default.clicarEntrar();\n_loginPage.default.validarCamposObrigatorios();",
+              "err": {},
+              "uuid": "914be735-a1a9-4f88-9ee4-52e7bc6626e3",
+              "parentUUID": "e9a3a268-179f-43f0-8e70-985108c4c954",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT-LOGIN-004 - Email com formato inválido",
+              "fullTitle": "Login CT-LOGIN-004 - Email com formato inválido",
+              "timedOut": null,
+              "duration": 1172,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('login').then(data => {\n  _loginPage.default.login(data.emailInvalido.email, data.emailInvalido.senha);\n  _loginPage.default.emailInvalido();\n});",
+              "err": {},
+              "uuid": "e70b59f4-e0ac-4262-bdd2-c55add206e3c",
+              "parentUUID": "e9a3a268-179f-43f0-8e70-985108c4c954",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2da5e49f-3c40-4738-9c66-18972fb8d0a9",
+            "27f8d0ec-4c99-4f26-9e87-a34d64e3f1c0",
+            "914be735-a1a9-4f88-9ee4-52e7bc6626e3",
+            "e70b59f4-e0ac-4262-bdd2-c55add206e3c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4200,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

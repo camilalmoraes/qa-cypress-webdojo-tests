@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-03-22T01:22:08.117Z",
+    "end": "2026-03-22T01:22:09.583Z",
+    "duration": 1466,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6aec63e9-62be-4368-bd69-5b5396617f03",
+      "title": "",
+      "fullFile": "cypress\\e2e\\kanbanBoard.cy.js",
+      "file": "cypress\\e2e\\kanbanBoard.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dc73ed41-aeda-43fb-8cb0-92758f03ec9b",
+          "title": "Kanban Board",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CT-Kanban-001 - Mover tarefa para proxima coluna",
+              "fullTitle": "Kanban Board CT-Kanban-001 - Mover tarefa para proxima coluna",
+              "timedOut": null,
+              "duration": 1421,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('login').then(data => {\n  cy.login(data.valido.email, data.valido.senha);\n});\ncy.acessaPagina('Kanban', 'Kanban Board');\n_KanbanPage.default.moverCard();\n_KanbanPage.default.validaAtualizacao();",
+              "err": {},
+              "uuid": "59629594-184d-4814-905d-9eacf617d6d8",
+              "parentUUID": "dc73ed41-aeda-43fb-8cb0-92758f03ec9b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "59629594-184d-4814-905d-9eacf617d6d8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1421,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

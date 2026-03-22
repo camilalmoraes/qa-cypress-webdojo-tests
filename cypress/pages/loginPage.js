@@ -1,4 +1,4 @@
-class loginPage {
+class LoginPage {
     acessarLogin() {
         cy.visit('/')
     }
@@ -44,4 +44,4 @@ class loginPage {
 
 }
 
-export default new loginPage()
+export default new LoginPage()

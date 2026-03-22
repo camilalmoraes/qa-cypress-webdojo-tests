@@ -3,7 +3,6 @@
 
 Validar autenticação do usuário, comportamento do sistema e tratamento de erros.
 
-🧪 Casos de Teste
 
 FUNCIONALIDADE - LOGIN: 
 CT-LOGIN-001

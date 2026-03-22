@@ -1,16 +1,11 @@
 
-import formPage from '../pages/FormPage'
-import loginPage from '../pages/loginPage'
+import FormPage from '../pages/FormPage'
 
 describe('forms', () => {
 
     beforeEach(() => {
-        loginPage.acessarLogin()
-
         cy.fixture('login').then((data) => {
-            loginPage.preencherEmail(data.valido.email)
-            loginPage.preencherSenha(data.valido.senha)
-            loginPage.clicarEntrar()
+            cy.login(data.valido.email, data.valido.senha)
         })
     })
 
@@ -18,39 +13,39 @@ describe('forms', () => {
 
         cy.acessaPagina('Formulário', 'Consultoria')
 
-        formPage.preencherNome('Camila Louzada Moraes')
-        formPage.preencherEmail('camila@gmail.com')
-        formPage.preencherTelefone('83988888888')
+        FormPage.preencherNome('Camila Louzada Moraes')
+        FormPage.preencherEmail('camila@gmail.com')
+        FormPage.preencherTelefone('83988888888')
 
-        formPage.selecionarTipoConsultoria('Individual')
-        formPage.selecionarPessoaFisica()
-        formPage.preencherCPF('86083034507')
+        FormPage.selecionarTipoConsultoria('Individual')
+        FormPage.selecionarPessoaFisica()
+        FormPage.preencherCPF('86083034507')
 
-        formPage.selecionarCanais()
-        formPage.uploadArquivo()
+        FormPage.selecionarCanais()
+        FormPage.uploadArquivo()
 
-        formPage.preencherDetalhes('Blablabla')
+        FormPage.preencherDetalhes('Blablabla')
 
-        formPage.adicionarTecnologia('Cypress')
-        formPage.validarTecnologia('Cypress')
+        FormPage.adicionarTecnologia('Cypress')
+        FormPage.validarTecnologia('Cypress')
 
-        formPage.aceitarTermos()
-        formPage.enviarFormulario()
+        FormPage.aceitarTermos()
+        FormPage.enviarFormulario()
 
-        formPage.validarSucesso()
+        FormPage.validarSucesso()
     })
 
     it('CT-FORM-02 - Envio do formulário com apenas dados obrigatórios válidos', () => {
 
         cy.acessaPagina('Formulário', 'Consultoria')
 
-        formPage.preencherNome('Camila Louzada Moraes')
-        formPage.preencherEmail('camila@gmail.com')
+        FormPage.preencherNome('Camila Louzada Moraes')
+        FormPage.preencherEmail('camila@gmail.com')
 
-        formPage.aceitarTermos()
-        formPage.enviarFormulario()
+        FormPage.aceitarTermos()
+        FormPage.enviarFormulario()
 
-        formPage.validarSucesso()
+        FormPage.validarSucesso()
 
     })
 
@@ -58,35 +53,35 @@ describe('forms', () => {
 
         cy.acessaPagina('Formulário', 'Consultoria')
 
-        formPage.preencherTelefone('83988888888')
+        FormPage.preencherTelefone('83988888888')
 
-        formPage.selecionarTipoConsultoria('Individual')
-        formPage.selecionarPessoaFisica()
-        formPage.preencherCPF('86083034507')
+        FormPage.selecionarTipoConsultoria('Individual')
+        FormPage.selecionarPessoaFisica()
+        FormPage.preencherCPF('86083034507')
 
-        formPage.selecionarCanais()
-        formPage.uploadArquivo()
+        FormPage.selecionarCanais()
+        FormPage.uploadArquivo()
 
-        formPage.preencherDetalhes('Blablabla')
+        FormPage.preencherDetalhes('Blablabla')
 
-        formPage.adicionarTecnologia('Cypress')
-        formPage.validarTecnologia('Cypress')
+        FormPage.adicionarTecnologia('Cypress')
+        FormPage.validarTecnologia('Cypress')
 
-        formPage.aceitarTermos()
-        formPage.enviarFormulario()
+        FormPage.aceitarTermos()
+        FormPage.enviarFormulario()
 
-        formPage.validarCampoEmail()
-        formPage.validarCampoNome()
+        FormPage.validarCampoEmail()
+        FormPage.validarCampoNome()
     })
 
     it('CT-FORM-004 - Email em formato inválido', () => {
         cy.acessaPagina('Formulário', 'Consultoria')
 
-        formPage.preencherNome('Camila Louzada Moraes')
-        formPage.preencherEmail('camila')
+        FormPage.preencherNome('Camila Louzada Moraes')
+        FormPage.preencherEmail('camila')
 
-        formPage.aceitarTermos()
-        formPage.enviarFormulario()
+        FormPage.aceitarTermos()
+        FormPage.enviarFormulario()
 
         cy.get('#email').then(($input) => {
             const message = $input[0].validationMessage
@@ -99,10 +94,10 @@ describe('forms', () => {
 
         cy.acessaPagina('Formulário', 'Consultoria')
 
-        formPage.preencherNome('Camila Louzada Moraes')
-        formPage.preencherEmail('camila@gmail.com')
+        FormPage.preencherNome('Camila Louzada Moraes')
+        FormPage.preencherEmail('camila@gmail.com')
 
-        formPage.enviarFormulario()
+        FormPage.enviarFormulario()
 
         cy.contains('Você precisa aceitar os termos de uso')
             .should('be.visible')

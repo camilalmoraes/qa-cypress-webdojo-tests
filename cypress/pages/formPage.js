@@ -1,4 +1,4 @@
-class formPage {
+class FormPage {
 
     preencherNome(nome) {
         cy.get('#name').type(nome)
@@ -87,4 +87,4 @@ class formPage {
     }
 
 }
-export default new formPage()
+export default new FormPage()

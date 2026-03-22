@@ -1,22 +1,18 @@
-import loginPage from "../pages/loginPage"
-import kanbanPage from "../pages/kanbanPage"
+import LoginPage from "../pages/LoginPage"
+import KanbanPage from "../pages/KanbanPage"
 
 //Aprendendo a usar drag and drop
 describe('Kanban Board', () => {
 
     it('CT-Kanban-001 - Mover tarefa para proxima coluna', () => {
 
-        loginPage.acessarLogin()
-
         cy.fixture('login').then((data) => {
-            loginPage.preencherEmail(data.valido.email)
-            loginPage.preencherSenha(data.valido.senha)
-            loginPage.clicarEntrar()
+            cy.login(data.valido.email, data.valido.senha)
         })
 
         cy.acessaPagina('Kanban', 'Kanban Board')
-        kanbanPage.moverCard()
-        kanbanPage.validaAtualizacao()
+        KanbanPage.moverCard()
+        KanbanPage.validaAtualizacao()
 
     })
 })

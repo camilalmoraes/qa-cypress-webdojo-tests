@@ -1,0 +1,194 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 2,
+    "pending": 0,
+    "failures": 3,
+    "start": "2026-03-22T01:51:54.854Z",
+    "end": "2026-03-22T01:53:13.173Z",
+    "duration": 78319,
+    "testsRegistered": 5,
+    "passPercent": 40,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e67553a5-08cb-4d64-99d6-2305c4dddde6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\forms.cy.js",
+      "file": "cypress\\e2e\\forms.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0223fb40-42ac-4eb0-b3cc-2c232b00a89f",
+          "title": "forms",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CT-FORM-001 - Envio com campos obrigatórios válidos",
+              "fullTitle": "forms CT-FORM-001 - Envio com campos obrigatórios válidos",
+              "timedOut": null,
+              "duration": 9415,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.acessaPagina('Formulário', 'Consultoria');\n_FormPage.default.preencherNome('Camila Louzada Moraes');\n_FormPage.default.preencherEmail('camila@gmail.com');\n_FormPage.default.preencherTelefone('83988888888');\n_FormPage.default.selecionarTipoConsultoria('Individual');\n_FormPage.default.selecionarPessoaFisica();\n_FormPage.default.preencherCPF('86083034507');\n_FormPage.default.selecionarCanais();\n_FormPage.default.uploadArquivo();\n_FormPage.default.preencherDetalhes('Blablabla');\n_FormPage.default.adicionarTecnologia('Cypress');\n_FormPage.default.validarTecnologia('Cypress');\n_FormPage.default.aceitarTermos();\n_FormPage.default.enviarFormulario();\n_FormPage.default.validarSucesso();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'consultoria foi enviada com sucesso' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'consultoria foi enviada com sucesso' but never did.\n    at FormPage.validarSucesso (webpack://web/./cypress/pages/FormPage.js:76:13)\n    at Context.eval (webpack://web/./cypress/e2e/forms.cy.js:35:17)",
+                "diff": null
+              },
+              "uuid": "f7bffe45-b252-4db5-b668-8dc657d47edd",
+              "parentUUID": "0223fb40-42ac-4eb0-b3cc-2c232b00a89f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT-FORM-02 - Envio do formulário com apenas dados obrigatórios válidos",
+              "fullTitle": "forms CT-FORM-02 - Envio do formulário com apenas dados obrigatórios válidos",
+              "timedOut": null,
+              "duration": 6284,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.acessaPagina('Formulário', 'Consultoria');\n_FormPage.default.preencherNome('Camila Louzada Moraes');\n_FormPage.default.preencherEmail('camila@gmail.com');\n_FormPage.default.aceitarTermos();\n_FormPage.default.enviarFormulario();\n_FormPage.default.validarSucesso();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'consultoria foi enviada com sucesso' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'consultoria foi enviada com sucesso' but never did.\n    at FormPage.validarSucesso (webpack://web/./cypress/pages/FormPage.js:76:13)\n    at Context.eval (webpack://web/./cypress/e2e/forms.cy.js:48:17)",
+                "diff": null
+              },
+              "uuid": "3728377c-fbc1-4db5-bd9f-310087a31273",
+              "parentUUID": "0223fb40-42ac-4eb0-b3cc-2c232b00a89f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT-FORM-003 - Envio sem preencher campos obrigatórios",
+              "fullTitle": "forms CT-FORM-003 - Envio sem preencher campos obrigatórios",
+              "timedOut": null,
+              "duration": 7921,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.acessaPagina('Formulário', 'Consultoria');\n_FormPage.default.preencherTelefone('83988888888');\n_FormPage.default.selecionarTipoConsultoria('Individual');\n_FormPage.default.selecionarPessoaFisica();\n_FormPage.default.preencherCPF('86083034507');\n_FormPage.default.selecionarCanais();\n_FormPage.default.uploadArquivo();\n_FormPage.default.preencherDetalhes('Blablabla');\n_FormPage.default.adicionarTecnologia('Cypress');\n_FormPage.default.validarTecnologia('Cypress');\n_FormPage.default.aceitarTermos();\n_FormPage.default.enviarFormulario();\n_FormPage.default.validarCampoEmail();\n_FormPage.default.validarCampoNome();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Informe um email válido' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Informe um email válido' but never did.\n    at FormPage.validarCampoEmail (webpack://web/./cypress/pages/FormPage.js:86:13)\n    at Context.eval (webpack://web/./cypress/e2e/forms.cy.js:73:17)",
+                "diff": null
+              },
+              "uuid": "315037b4-542a-486d-989f-15e8f4933b9e",
+              "parentUUID": "0223fb40-42ac-4eb0-b3cc-2c232b00a89f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT-FORM-004 - Email em formato inválido",
+              "fullTitle": "forms CT-FORM-004 - Email em formato inválido",
+              "timedOut": null,
+              "duration": 2105,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.acessaPagina('Formulário', 'Consultoria');\n_FormPage.default.preencherNome('Camila Louzada Moraes');\n_FormPage.default.preencherEmail('camila');\n_FormPage.default.aceitarTermos();\n_FormPage.default.enviarFormulario();\ncy.get('#email').then($input => {\n  const message = $input[0].validationMessage;\n  expect(message).to.not.be.empty;\n});",
+              "err": {},
+              "uuid": "1e501ccf-fd80-4445-9f31-bc4efe0ae0ea",
+              "parentUUID": "0223fb40-42ac-4eb0-b3cc-2c232b00a89f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT-FORM-005 - Envio sem aceitar termos de uso",
+              "fullTitle": "forms CT-FORM-005 - Envio sem aceitar termos de uso",
+              "timedOut": null,
+              "duration": 51377,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.acessaPagina('Formulário', 'Consultoria');\n_FormPage.default.preencherNome('Camila Louzada Moraes');\n_FormPage.default.preencherEmail('camila@gmail.com');\n_FormPage.default.enviarFormulario();\ncy.contains('Você precisa aceitar os termos de uso').should('be.visible');",
+              "err": {},
+              "uuid": "df7778a3-5771-4146-8bbe-ad583da40a80",
+              "parentUUID": "0223fb40-42ac-4eb0-b3cc-2c232b00a89f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1e501ccf-fd80-4445-9f31-bc4efe0ae0ea",
+            "df7778a3-5771-4146-8bbe-ad583da40a80"
+          ],
+          "failures": [
+            "f7bffe45-b252-4db5-b668-8dc657d47edd",
+            "3728377c-fbc1-4db5-bd9f-310087a31273",
+            "315037b4-542a-486d-989f-15e8f4933b9e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 77102,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
