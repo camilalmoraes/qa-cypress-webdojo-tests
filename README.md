@@ -146,8 +146,8 @@ Localização:
 
 ```bash
 cypress/reports/report.html
-![Relatório Mochawesome](docs/images/report.png)
 ```
+![Relatório Mochawesome](docs/imagem/report.png)
 
 ---
 
