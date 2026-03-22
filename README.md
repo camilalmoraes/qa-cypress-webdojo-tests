@@ -146,6 +146,7 @@ Localização:
 
 ```bash
 cypress/reports/report.html
+![Relatório Mochawesome](docs/images/report.png)
 ```
 
 ---
@@ -156,7 +157,7 @@ Durante a execução dos testes são geradas automaticamente:
 
 * Screenshots em caso de falha
 * Logs detalhados da execução
-
+![Execução dos testes](docs/gif/test-run.gif)
 ---
 
 ### Tecnologias Utilizadas
